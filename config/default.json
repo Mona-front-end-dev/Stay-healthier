@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://mona123:mona123@stay-helthier-project.ih4e8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://mona123:mona123@stay-helthier-project.ih4e8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
 }
