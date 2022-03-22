@@ -1,7 +1,7 @@
 const express = require('express')
 const { route } = require('./auth')
 const router = express.Router()
-const { check, validationResult } = require('express-validator/check')
+const { check, validationResult } = require('express-validator')
 
 // @route  Post api/users
 // @desc   To register user
