@@ -18,8 +18,13 @@ const ProfileSchema = new mongoose.Schema({
   },
   experience: [
     {
+      title: {
+        type: String,
+        required: true
+      },
       from: {
         type: Date,
+        required: true
       },
       to: {
         type: Date,
