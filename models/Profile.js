@@ -12,7 +12,7 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  information: {
+  bio: {
     type: String,
     required: true,
   },
@@ -20,7 +20,6 @@ const ProfileSchema = new mongoose.Schema({
     {
       from: {
         type: Date,
-        required: true,
       },
       to: {
         type: Date,
