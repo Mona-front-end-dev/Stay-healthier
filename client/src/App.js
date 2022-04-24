@@ -5,21 +5,27 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
+//Redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 
 
 
 function App() {
   return (
-    <Router>
-      <Navigation />
-      <Container>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login /> } />
-          <Route exact path="/" element={<Landing />} />
-        </Routes>
-      </Container>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navigation />
+        <Container>
+          <Routes>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login /> } />
+            <Route exact path="/" element={<Landing />} />
+          </Routes>
+        </Container>
+      </Router>
+    </Provider>
   );
 }
 
