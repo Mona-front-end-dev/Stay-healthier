@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Form, Col, Button } from 'react-bootstrap';
+import { Row, Form, Col, Button, Nav } from 'react-bootstrap';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -75,7 +75,7 @@ const Register = () => {
           </Button>
         </Form>
         <p className="my-1">
-          Already have an account? <a href="login.html">Sign In</a>
+          Already have an account? <Nav.Link href="/login">Sign In</Nav.Link>
         </p>
       </Col>
     </Row>
