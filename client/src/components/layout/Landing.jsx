@@ -12,10 +12,10 @@ const Landing = () => {
                 </Form.Text>
             </Form.Group>
             <div className="btn-wrapper pb-5">       
-                <Button variant="dark" type="submit">
+                <Button href="/register" variant="dark" type="submit">
                     Sign Up
                 </Button>
-                <Button type="submit" variant="light">
+                <Button href="/login" type="submit" variant="light">
                     Login
                 </Button>
             </div>

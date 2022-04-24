@@ -1,10 +1,10 @@
 
 
-body {
+/* body {
   background-image: url("./assets/bg-image-home.jpg");
   background-color: #000;
   background-size: cover;
-}
+} */
 
 .btn-wrapper {
   display: flex;
