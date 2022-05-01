@@ -4,7 +4,9 @@ import {
     REGISTER_SUCCESS, 
     REGISTER_FAIL,
     USER_LOADED,
-    AUTH_ERROR
+    AUTH_ERROR,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL
 } from './types';
 import setAuthToken from '../utils/setAuthToken'
 
@@ -50,6 +52,8 @@ export const register = ({ name, email, password }) => async dispatch => {
             type: REGISTER_SUCCESS,
             payload: res.data
         });
+
+        dispatch(loadUser());
     } catch (err) {
         const errors = err.response.data.errors;
 
@@ -59,6 +63,43 @@ export const register = ({ name, email, password }) => async dispatch => {
 
         dispatch({
             type: REGISTER_FAIL
+        })
+    }
+}
+
+
+//Login User
+export const login = ( email, password ) => async dispatch => {
+   
+    const config = {
+        //sending data
+        headers: {
+            'Contents-Type': 'application/json'
+        }
+    }
+    // prepairing data to send(commented this part as I have already app.use(express.json()); in server.js)
+    // const body = JSON.stringify({ name, email, password });
+
+    try {
+        //sending the request to get the response
+        const res = await axios.post('http://localhost:5000/api/auth', { email, password }, config);
+
+        //tells the app that state has been updated
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        });
+
+        dispatch(loadUser());
+    } catch (err) {
+        const errors = err.response.data.errors;
+
+        if(errors) {
+            errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+        }
+
+        dispatch({
+            type: LOGIN_FAIL
         })
     }
 }
