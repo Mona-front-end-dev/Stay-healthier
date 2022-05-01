@@ -9,6 +9,10 @@ app.get('/', (req, res) => res.send('API Runnning'));
 // Init Middleware
 app.use(express.json({extended: false}));
 
+    app.use(express.json());
+    var cors = require('cors');
+    app.use(cors());
+
 // Define Routes
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/auth', require('./routes/api/auth'))
