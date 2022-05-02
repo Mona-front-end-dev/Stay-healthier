@@ -4,7 +4,8 @@ import {
     USER_LOADED,
     AUTH_ERROR, 
     LOGIN_SUCCESS,
-    LOGIN_FAIL
+    LOGIN_FAIL,
+    LOGOUT
 } from '../actions/types';
 
 const initialState = {
@@ -37,6 +38,7 @@ export default function funcName(state = initialState, action) {
         case REGISTER_FAIL:
         case AUTH_ERROR:// Auth error does the same thing thats why it is located here
         case LOGIN_FAIL:
+        case LOGOUT:
             localStorage.removeItem('token');
             return {
                 ...state,

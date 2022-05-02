@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     <Row>
       <Col>
         <h1 className="large text-dark">Sign Up</h1>
-        <p className="lead"><i className="fa fa-user"></i> Create Your Account</p>
+        <p className="lead"><i className="fa fa-user"></i> {' '} Create Your Account</p>
         <Form className="form" onSubmit={e => onSubmit(e)}>
           <Form.Group className="mb-3">
             <Form.Control 

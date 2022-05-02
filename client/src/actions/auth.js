@@ -6,7 +6,8 @@ import {
     USER_LOADED,
     AUTH_ERROR,
     LOGIN_SUCCESS,
-    LOGIN_FAIL
+    LOGIN_FAIL,
+    LOGOUT
 } from './types';
 import setAuthToken from '../utils/setAuthToken'
 
@@ -45,7 +46,6 @@ export const register = ({ name, email, password }) => async dispatch => {
     try {
         //sending the request to get the response
         const res = await axios.post('http://localhost:5000/api/users', { name, email, password }, config);
-        console.log(res);
 
         //tells the app that state has been updated
         dispatch({
@@ -77,8 +77,6 @@ export const login = ( email, password ) => async dispatch => {
             'Contents-Type': 'application/json'
         }
     }
-    // prepairing data to send(commented this part as I have already app.use(express.json()); in server.js)
-    // const body = JSON.stringify({ name, email, password });
 
     try {
         //sending the request to get the response
@@ -102,4 +100,9 @@ export const login = ( email, password ) => async dispatch => {
             type: LOGIN_FAIL
         })
     }
+};
+
+//Logout / clear profile
+export const logout = () => dispatch => {
+    dispatch({ type: LOGOUT });
 }

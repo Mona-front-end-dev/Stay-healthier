@@ -1,21 +1,40 @@
 import React from 'react';
 import { Nav, NavLink, NavItem } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth'
 
-const Navigation = () => {
+const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+  <NavLink onClick={logout} className="nav-item nav-link text-light" href="#!"><i className="fal fa-sign-out-alt"></i> <span className="hide-sm">{' '} Logout</span></NavLink>
+  );
+
+  const guestLinks = (
+    <NavItem className="navbar-nav">
+      <NavLink className="nav-item nav-link text-light" href="#!">Members</NavLink>
+      <NavLink className="nav-item nav-link text-light" href="/register">Register</NavLink>
+      <NavLink className="nav-item nav-link text-light" href="/login">Login</NavLink>
+    </NavItem>           
+  );
   
   return (
     <Nav className="navbar navbar-expand-lg bg-dark" >
-        <Container>       
-            <NavLink className="navbar-brand fw-bold text-light " href="/">Stay Healthier</NavLink>   
-            <NavItem className="navbar-nav">
-                <NavLink className="nav-item nav-link text-light" href="!#">Members</NavLink>
-                <NavLink className="nav-item nav-link text-light" href="/register">Register</NavLink>
-                <NavLink className="nav-item nav-link text-light" href="/login">Login</NavLink>
-            </NavItem>           
-        </Container>
+      <Container>       
+        <NavLink className="navbar-brand fw-bold text-light " href="/">Stay Healthier</NavLink> 
+        { !loading && (<>{ isAuthenticated ? authLinks : guestLinks }</>) }             
+      </Container>
     </Nav>
   )
 }
 
-export default Navigation
+Navigation.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps, { logout })(Navigation)
