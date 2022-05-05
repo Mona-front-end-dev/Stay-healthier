@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const POstSchema = new Schema({
   user: {
@@ -20,6 +20,6 @@ const POstSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
-module.exports = Post = mongoose.model('post', POstSchema)
+module.exports = Post = mongoose.model('post', POstSchema);
