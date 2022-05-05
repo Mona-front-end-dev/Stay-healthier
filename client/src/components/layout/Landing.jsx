@@ -1,7 +1,14 @@
 import React from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Navigate } from 'react-router-dom';
 
-const Landing = () => {
+const Landing = ({ isAuthenticated }) => {
+if(isAuthenticated) {
+   return <Navigate to='/dashboard' />;
+}
+
   return (
     <Row className="mt-5" >
         <Col className="form-wrapper ">
@@ -24,4 +31,11 @@ const Landing = () => {
   )
 }
 
-export default Landing
+Landing.propTypes = {
+    isAuthenticated: PropTypes.bool,
+}
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default (connect(mapStateToProps))(Landing)
