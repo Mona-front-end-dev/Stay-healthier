@@ -7,7 +7,7 @@ import { logout } from '../../actions/auth'
 
 const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-  <NavLink onClick={logout} className="nav-item nav-link text-light" href="#!"><i className="fal fa-sign-out-alt"></i> <span className="hide-sm">{' '} Logout</span></NavLink>
+    <NavLink onClick={logout} className="nav-item nav-link text-light" href="/"><i className="fal fa-sign-out-alt"></i> <span className="hide-sm">{' '} Logout</span></NavLink>
   );
 
   const guestLinks = (
