@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Row, Col, Form, Button } from 'react-bootstrap';
+import { createProfile } from '../../actions/profile';
+// import { withRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const CreateProfile = (props) => {
+const CreateProfile = ({ createProfile, history }) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     location: '',
     status: '',
@@ -19,6 +24,11 @@ const CreateProfile = (props) => {
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    createProfile(formData, navigate('/dashboard'));
+  };
   return (
     <>
       <Row>
@@ -29,7 +39,7 @@ const CreateProfile = (props) => {
             your profile stand out
           </p>
           <small>* = required field</small>
-          <Form>
+          <Form onSubmit={(e) => onSubmit(e)}>
             <Form.Group className='my-3'>
               <Form.Label>
                 * Tell us about the type of your life style for example Raw
@@ -119,6 +129,8 @@ const CreateProfile = (props) => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+};
 
-export default CreateProfile;
+export default connect(null, { createProfile })(CreateProfile);
