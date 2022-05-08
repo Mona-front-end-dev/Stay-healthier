@@ -52,7 +52,7 @@ const CreateProfile = ({ createProfile }) => {
               />
             </Form.Group>
             <Form.Group className='mb-3'>
-              <Form.Label>City & state (eg. Boston, MA)</Form.Label>
+              <Form.Label>City & Country</Form.Label>
               <Form.Control
                 value={location}
                 onChange={(e) => onChange(e)}

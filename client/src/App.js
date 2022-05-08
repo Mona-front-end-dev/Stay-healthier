@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
+import Profiles from './components/profiles/Profiles';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //Redux
@@ -34,6 +35,7 @@ function App() {
           <Routes>
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/profiles' element={<Profiles />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/create-profile' element={<CreateProfile />} />
             <Route path='/edit-profile' element={<EditProfile />} />

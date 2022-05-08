@@ -8,6 +8,9 @@ import { logout } from '../../actions/auth';
 const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <NavItem className='navbar-nav'>
+      <NavLink className='nav-item nav-link text-light' href='/profiles'>
+        Members
+      </NavLink>
       <NavLink className='nav-item nav-link text-light' href='/dashboard'>
         <i className='fa fa-user'></i> Dashboard
       </NavLink>
@@ -23,7 +26,7 @@ const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <NavItem className='navbar-nav'>
-      <NavLink className='nav-item nav-link text-light' href='#!'>
+      <NavLink className='nav-item nav-link text-light' href='/profiles'>
         Members
       </NavLink>
       <NavLink className='nav-item nav-link text-light' href='/register'>
