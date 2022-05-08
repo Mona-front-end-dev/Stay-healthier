@@ -8,6 +8,7 @@ import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
+import AddExperience from './components/profile-forms/AddExperience';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //Redux
@@ -36,6 +37,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/create-profile' element={<CreateProfile />} />
             <Route path='/edit-profile' element={<EditProfile />} />
+            <Route path='/add-experience' element={<AddExperience />} />
             <Route exact path='/' element={<Landing />} />
           </Routes>
         </Container>

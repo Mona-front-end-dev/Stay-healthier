@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Row, Col, Form, Button, NavLink } from 'react-bootstrap';
 import { createProfile } from '../../actions/profile';
-// import { withRouter } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateProfile = ({ createProfile }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,8 +16,6 @@ const CreateProfile = ({ createProfile, history }) => {
     facebook: '',
     instagram: '',
   });
-
-  const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const { location, status, bio, youtube, facebook, instagram } = formData;
 

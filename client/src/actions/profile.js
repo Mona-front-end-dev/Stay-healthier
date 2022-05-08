@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-
-import { GET_PROFILE, PROFILE_ERROR } from './types';
+import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE } from './types';
 import { Navigate } from 'react-router-dom';
 
 //Get current users profile
@@ -46,6 +45,42 @@ export const createProfile = (formData, edit = false) => async (dispatch) => {
     if (!edit) {
       Navigate('/dashboard');
     }
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// Add experience
+export const addExperience = (formData) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const res = await axios.put(
+      'http://localhost:5000/api/profile/experience',
+      formData,
+      config
+    );
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data,
+    });
+
+    dispatch(setAlert('Experience added', 'success'));
+
+    Navigate('/dashboard');
   } catch (err) {
     const errors = err.response.data.errors;
 
