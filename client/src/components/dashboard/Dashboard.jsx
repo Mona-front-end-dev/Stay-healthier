@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profile';
+import DashboardActions from './DashboardActions';
 import { NavLink } from 'react-router-dom';
 
 const Dashboard = ({
@@ -24,7 +25,9 @@ const Dashboard = ({
         <i className='fa fa-user'></i> Welcome {user && user.name}
       </p>
       {profile !== null ? (
-        <>has</>
+        <>
+          <DashboardActions />
+        </>
       ) : (
         <>
           <p>You have not set up a profile yet, please add some info </p>

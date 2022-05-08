@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Row, Col, Form, Button, NavLink } from 'react-bootstrap';
 import { createProfile } from '../../actions/profile';
 // import { withRouter } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -74,17 +74,7 @@ const CreateProfile = ({ createProfile, history }) => {
                 onChange={(e) => onChange(e)}
               />
             </Form.Group>
-            <div className='my-2'>
-              <Button
-                onClick={() => toggleSocialInputs(!displaySocialInputs)}
-                variant='secondary'
-              >
-                Add Social Network Links
-              </Button>
-              {'  '}
-              <span>Optional</span>
-            </div>
-            {displaySocialInputs && (
+            
               <>
                 <Form.Group className='social-input my-3'>
                   <i className='fa fa-facebook fa-2x'></i>
@@ -117,9 +107,9 @@ const CreateProfile = ({ createProfile, history }) => {
                   />
                 </Form.Group>
               </>
-            )}
+            
             <input type='submit' className='btn btn-dark my-1' />{' '}
-            <a className='btn btn-secondary my-1' href='dashboard.html'>
+            <a className='btn btn-light my-1' href='/dashboard'>
               Go Back
             </a>
           </Form>
