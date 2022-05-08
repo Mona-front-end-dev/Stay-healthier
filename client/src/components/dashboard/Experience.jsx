@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import { deleteExperience } from '../../actions/profile'
-import { prefix } from '@fortawesome/free-solid-svg-icons';
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
