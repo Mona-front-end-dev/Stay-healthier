@@ -93,11 +93,11 @@ const AddExperience = ({ addExperience }) => {
             onChange={(e) => onChange(e)}
           />
         </Form.Group>
-        <input type='submit' className='btn btn-dark my-1' />
-        <a className='btn btn-light my-1' href='dashboard.html'>
-          Go Back
-        </a>
-      </Form>
+            <input type='submit' className='btn btn-dark my-1' />
+            <NavLink className='btn btn-light my-1' to='/dashboard'>
+            Go Back
+            </NavLink>
+        </Form>
     </>
   );
 };
