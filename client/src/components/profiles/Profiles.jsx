@@ -8,7 +8,6 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
   }, []);
-//   console.log(profiles);
   return <>
       {loading ? (
         <div className='spinner-border text-secondary'></div>

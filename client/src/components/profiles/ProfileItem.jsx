@@ -4,19 +4,19 @@ import { NavLink } from 'react-router-dom';
 
 const ProfileItem = ({
   profile: {
-    user: { _id, name, avatar },
+    user,
     status,
     location,
   },
 }) => {
   return (
     <div className='bg-light display-flex'>
-      <img src={avatar} alt='' className='round-img' />
+      <img src={user?.avatar} alt='' />
       <div>
-        <h2>{name}</h2>
+        <h2>{user?.name}</h2>
         <p>{status}</p>
         <p className='my-1'>{location && <span>{location}</span>}</p>
-        <NavLink to={`/profile/${_id}`} className='btn btn-dark'>
+        <NavLink to={`/profile/${user?._id}`} className='btn btn-dark'>
           View Profile
         </NavLink>
       </div>
