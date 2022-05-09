@@ -16,7 +16,7 @@ const ProfileItem = ({
         <h2>{name}</h2>
         <p>{status}</p>
         <p className='my-1'>{location && <span>{location}</span>}</p>
-        <NavLink to={`/profiles/${_id}`} className='btn btn-dark'>
+        <NavLink to={`/profile/${_id}`} className='btn btn-dark'>
           View Profile
         </NavLink>
       </div>

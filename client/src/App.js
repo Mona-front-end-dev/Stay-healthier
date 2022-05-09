@@ -10,6 +10,7 @@ import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //Redux
@@ -36,6 +37,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/profiles' element={<Profiles />} />
+            <Route path='/profile/:id' element={<Profile />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/create-profile' element={<CreateProfile />} />
             <Route path='/edit-profile' element={<EditProfile />} />
