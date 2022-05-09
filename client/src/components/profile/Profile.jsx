@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getProfileById } from '../../actions/profile'
-import { useParams, NavLink } from 'react-router-dom';
-import ProfileTop from './ProfileTop';
-import ProfileAbout from './ProfileAbout';
-
+import { useParams, NavLink } from 'react-router-dom'
+import ProfileTop from './ProfileTop'
+import ProfileAbout from './ProfileAbout'
+import ProfileExperience from './ProfileExperience'
 
 const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
   const { id } = useParams()
@@ -31,8 +31,23 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
               </NavLink>
             )}
           <div className="profile-grid my-1">
-            <ProfileTop profile={profile}/>
-            <ProfileAbout profile={profile}/>
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+            <div className="bg-light p-4">
+              <h2 className="text-dark">Experience</h2>
+              {profile.experience.length > 0 ? (
+                <>
+                  {profile.experience.map((experience) => (
+                    <ProfileExperience
+                      key={experience._id}
+                      experience={experience}
+                    />
+                  ))}
+                </>
+              ) : (
+                <h4>No experience Credentials</h4>
+              )}
+            </div>
           </div>
         </>
       )}
