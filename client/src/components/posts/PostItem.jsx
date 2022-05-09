@@ -3,8 +3,13 @@ import PropTypes from 'prop-types'
 import { NavLink, NavItem } from 'react-bootstrap'
 import Moment from 'react-moment'
 import { connect } from 'react-redux'
+import { deletePost } from '../../actions/post'
 
-const PostItem = ({ auth, post: { _id, text, name, avatar, user, date } }) => {
+const PostItem = ({
+  auth,
+  deletePost,
+  post: { _id, text, name, avatar, user, date },
+}) => {
   return (
     <div className="bg-light border p-1 my-4 d-flex">
       <NavItem>
@@ -16,7 +21,11 @@ const PostItem = ({ auth, post: { _id, text, name, avatar, user, date } }) => {
       <div className="p-4 m-4">
         <p className="my-1">{text}</p>
         {!auth.loading && user === auth.user._id && (
-          <button type="button" className="btn btn-danger float-end">
+          <button
+            onClick={(e) => deletePost(_id)}
+            type="button"
+            className="btn btn-danger float-end"
+          >
             <i className="fa fa-trash"></i>
           </button>
         )}
@@ -31,9 +40,10 @@ const PostItem = ({ auth, post: { _id, text, name, avatar, user, date } }) => {
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
+  deletePost: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
 })
-export default connect(mapStateToProps, {})(PostItem)
+export default connect(mapStateToProps, { deletePost })(PostItem)
