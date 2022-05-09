@@ -13,8 +13,8 @@ const ProfileTop = ({
 }) => {
   return (
     <div className="bg-light text-center p-4">
-      <img className="my-1" src={avatar} alt="" />
-      <h1>{name}</h1>
+      <img className="my-1 img-thumbnail" src={avatar} alt="" />
+      <h2>{name}</h2>
       <p className="lead">{status}</p>
       <p>{location && <span>{location}</span>}</p>
       <div className="icons my-1">

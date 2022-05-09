@@ -1,13 +1,27 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getPosts } from '../../actions/post'
+import { getPosts } from '../../actions/post';
+import PostItem from './PostItem';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts()
   }, [getPosts])
-  return <div>posts</div>
+  return (
+    <>
+      <h1 className="large text-dark">Posts</h1>
+      <p className="lead">
+        <i className='fa fa-user'></i>{' '} Welcome to the community
+      </p>
+      {/*PostForm*/}
+      <div>
+          {posts.map(post => (
+              <PostItem key={post._id} post={post} />
+          ))}
+      </div>
+    </>
+  )
 }
 
 Posts.propTypes = {
