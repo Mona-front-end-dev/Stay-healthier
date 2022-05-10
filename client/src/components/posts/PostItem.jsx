@@ -15,11 +15,12 @@ const PostItem = ({
       <NavItem>
         <NavLink to="/profile">
           <img className="img-thumbnail m-4" src={avatar} alt="user's avatar" />
-          <h4 className="text-dark py-4 text-center">{name}</h4>
         </NavLink>
       </NavItem>
       <div className="p-4 m-4">
+        <h4 className="text-dark py-2">{name}</h4>
         <p className="my-1">{text}</p>
+        <div className="my-4">
         {!auth.loading && user === auth.user._id && (
           <button
             onClick={(e) => deletePost(_id)}
@@ -29,9 +30,10 @@ const PostItem = ({
             <i className="fa fa-trash"></i>
           </button>
         )}
-        <p className="">
+        <p className='text-secondary'>
           Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
         </p>
+        </div>
       </div>
     </div>
   )

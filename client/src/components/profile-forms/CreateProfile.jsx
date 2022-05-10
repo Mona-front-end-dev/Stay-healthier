@@ -30,7 +30,7 @@ const CreateProfile = ({ createProfile }) => {
     <>
       <Row>
         <Col>
-          <h1 className='large text-black'>Create Your Profile</h1>
+          <h1 className='large text-black my-4'>Create Your Profile</h1>
           <p className='lead'>
             <i className='fa fa-user'></i> Let's get some information to make
             your profile stand out
@@ -106,7 +106,7 @@ const CreateProfile = ({ createProfile }) => {
               </>
             
             <input type='submit' className='btn btn-dark my-1' />{' '}
-            <a className='btn btn-light my-1' href='/dashboard'>
+            <a className='btn btn-light my-1 border' href='/dashboard'>
               Go Back
             </a>
           </Form>

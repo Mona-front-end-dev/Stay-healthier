@@ -29,9 +29,9 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Row>
       <Col>
-        <h1 className='large text-dark'>Sign In</h1>
+        <h1 className='large text-dark my-4'>Sign In</h1>
         <p className='lead'>
-          <i className='fa fa-user'></i>Sign into Your Account
+          <i className='fa fa-user'></i>{' '} Sign into Your Account
         </p>
         <Form className='form' onSubmit={(e) => onSubmit(e)}>
           <Form.Group className='mb-3'>
@@ -58,8 +58,8 @@ const Login = ({ login, isAuthenticated }) => {
             Sign In
           </Button>
         </Form>
-        <p className='my-1'>
-          Don't have an account? <Nav.Link href='/register'>Sign up</Nav.Link>
+        <p className='my-4'>
+          Don't have an account?{' '}<Button href='/register' className="bg-light text-dark border">Sign up</Button>
         </p>
       </Col>
     </Row>

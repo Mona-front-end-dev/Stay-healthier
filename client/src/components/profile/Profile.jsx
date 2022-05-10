@@ -6,6 +6,7 @@ import { useParams, NavLink } from 'react-router-dom'
 import ProfileTop from './ProfileTop'
 import ProfileAbout from './ProfileAbout'
 import ProfileExperience from './ProfileExperience'
+import { Row, Col } from 'react-bootstrap'
 
 const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
   const { id } = useParams()
@@ -15,14 +16,15 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
   }, [getProfileById])
 
   return (
-    <>
+    <Row>
+      <Col>
       {profile === null || loading ? (
         <h4>Loading ...</h4>
       ) : (
         <>
-          <NavLink to="/profiles" className="btn btn-light my-2">
+          <NavLink to="/profiles" className="btn btn-light my-2 border my-4">
             Back to profiles
-          </NavLink>
+          </NavLink> {' '}
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
@@ -36,14 +38,14 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
             <div className="bg-light p-4">
               <h2 className="text-dark">Experience</h2>
               {profile.experience.length > 0 ? (
-                <>
+                <div className='text-center'>
                   {profile.experience.map((experience) => (
                     <ProfileExperience
                       key={experience._id}
                       experience={experience}
                     />
                   ))}
-                </>
+                </div>
               ) : (
                 <h4>No experience Credentials</h4>
               )}
@@ -51,7 +53,8 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
           </div>
         </>
       )}
-    </>
+      </Col>
+    </Row>
   )
 }
 

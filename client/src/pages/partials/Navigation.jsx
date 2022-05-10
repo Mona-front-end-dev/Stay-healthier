@@ -22,7 +22,7 @@ const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
         className="nav-item nav-link text-light"
         href="/"
       >
-        <i className="fa fa-sign-out-alt"></i> Logout
+        <i className="fa fa-sign-out"></i> Logout
       </NavLink>
     </NavItem>
   )
@@ -45,7 +45,7 @@ const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
     <Nav className="navbar navbar-expand-lg bg-dark">
       <Container>
         <NavLink className="navbar-brand fw-bold text-light " href="/">
-          Stay Healthier
+          🍓 Stay Healthier
         </NavLink>
         {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
       </Container>

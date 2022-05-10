@@ -25,14 +25,14 @@ const AddExperience = ({ addExperience }) => {
 
   return (
     <>
-      <h1 className='large text-dark'>Add An Experience</h1>
+      <h1 className='large text-dark my-4'>Add An Experience</h1>
       <p className='lead'>
-        <i className='fa fa-black-tie'></i> Add any experience about this life
+        <i className='fa fa-black-tie text-secondary'></i> Add any experience about this life
         style you have had
       </p>
-      <small>* = required field</small>
+      <small className='text-secondary'>* = required field</small>
       <Form
-        className='form'
+        className='my-4'
         onSubmit={(e) => {
           e.preventDefault();
           addExperience(formData, navigate('/dashboard'));
@@ -52,6 +52,7 @@ const AddExperience = ({ addExperience }) => {
         <Form.Group>
           <Form.Label>From Date</Form.Label>
           <Form.Control
+            className='text-secondary'
             type='date'
             name='from'
             value={from}
@@ -76,6 +77,7 @@ const AddExperience = ({ addExperience }) => {
         <Form.Group>
           <Form.Label>To Date</Form.Label>
           <Form.Control
+            className='text-secondary'
             type='date'
             name='to'
             value={to}
@@ -93,8 +95,8 @@ const AddExperience = ({ addExperience }) => {
             onChange={(e) => onChange(e)}
           />
         </Form.Group>
-            <input type='submit' className='btn btn-dark my-1' />
-            <NavLink className='btn btn-light my-1' to='/dashboard'>
+            <input type='submit' className='btn btn-dark my-1 mx-2' />
+            <NavLink className='btn btn-light my-1 border' to='/dashboard'>
             Go Back
             </NavLink>
         </Form>

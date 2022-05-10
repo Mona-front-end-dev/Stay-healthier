@@ -121,7 +121,7 @@ const EditProfile = ({
               </Form.Group>
             </>
             <input type='submit' className='btn btn-dark my-1' />{' '}
-            <a className='btn btn-light my-1' href='/dashboard'>
+            <a className='btn btn-light my-1 border' href='/dashboard'>
               Go Back
             </a>
           </Form>

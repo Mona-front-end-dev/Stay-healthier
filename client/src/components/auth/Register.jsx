@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Row>
       <Col>
-        <h1 className='large text-dark'>Sign Up</h1>
+        <h1 className='large text-dark my-4'>Sign Up</h1>
         <p className='lead'>
           <i className='fa fa-user'></i> Create Your Account
         </p>
@@ -84,12 +84,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               minLength='6'
             />
           </Form.Group>
-          <Button type='submit' variant='dark'>
+          <Button type='submit' variant='dark' className='my-4'>
             Register
           </Button>
         </Form>
         <p className='my-1'>
-          Already have an account? <Nav.Link href='/login'>Sign In</Nav.Link>
+          Already have an account? <Button href='/login' className="bg-light text-dark border">Sign In</Button>
         </p>
       </Col>
     </Row>

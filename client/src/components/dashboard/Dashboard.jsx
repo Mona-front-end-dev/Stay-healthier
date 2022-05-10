@@ -18,12 +18,12 @@ const Dashboard = ({
   }, []);
 
   return loading && profile === null ? (
-    <div className='spinner-border text-secondary ' role='status'>
+    <div className='text-secondary ' role='status'>
       <span className='sr-only'>Loading...</span>
     </div>
   ) : (
     <>
-      <h1 className='large text-dark'>Dashboard</h1>
+      <h1 className='large text-dark my-4'>Dashboard</h1>
       <p>
         <i className='fa fa-user'></i> Welcome {user && user.name}
       </p>

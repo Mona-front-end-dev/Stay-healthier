@@ -19,31 +19,31 @@ const ProfileTop = ({
       <p>{location && <span>{location}</span>}</p>
       <div className="icons my-1">
         {social && social.facebook && (
-          <NavLink
-            to={social.facebook}
+          <a
+            href={social.facebook}
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-facebook fa-2x text-dark mx-2"></i>
-          </NavLink>
+          </a>
         )}
         {social && social.instagram && (
-          <NavLink
-            to={social.instagram}
+          <a
+            href={social.instagram}
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-instagram fa-2x text-dark mx-2"></i>
-          </NavLink>
+          </a>
         )}
         {social && social.youtube && (
-          <NavLink
-            to={social.youtube}
+          <a
+            href={social.youtube}
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-youtube fa-2x text-dark mx-2"></i>
-          </NavLink>
+          </a>
         )}
       </div>
     </div>
