@@ -11,7 +11,7 @@ const Landing = ({ isAuthenticated }) => {
 
   return (
     <Row className='mt-5'>
-      <Col className='form-wrapper '>
+      <Col className='form-wrapper mt-4'>
         <Form.Group className='mb-5 text-center pt-5 mt-5'>
           <Form.Text className='text-dark fs-3'>
             <h2 className='fw-bold'>Fruiterians Community</h2>
