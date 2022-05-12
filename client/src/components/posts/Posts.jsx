@@ -10,7 +10,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     getPosts()
   }, [getPosts])
   return (
-    <div className='my-4'>
+    <div className='pb-4'>
       <h1 className="large text-light my-4">Posts</h1>
       <p className="lead text-light">
         <i className='fa fa-user text-light'></i>{' '} Welcome to the community

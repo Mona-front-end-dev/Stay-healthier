@@ -11,7 +11,7 @@ const PostItem = ({
   post: { _id, text, name, avatar, user, date },
 }) => {
   return (
-    <div className="bg-light border p-1 my-4 d-flex">
+    <div className="bg-light border p-1 mt-4 d-flex">
       <NavItem>
         <NavLink to="/profile">
           <img className="img-thumbnail m-4" src={avatar} alt="user's avatar" />

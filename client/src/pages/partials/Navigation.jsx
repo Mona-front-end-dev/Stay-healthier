@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLink, NavItem } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -7,49 +7,39 @@ import { logout } from '../../actions/auth'
 
 const Navigation = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <NavItem className="navbar-nav">
-      <NavLink className="nav-item nav-link text-light" href="/profiles">
-        Members
-      </NavLink>
-      <NavLink className="nav-item nav-link text-light" href="/posts">
-        Posts
-      </NavLink>
-      <NavLink className="nav-item nav-link text-light" href="/dashboard">
+
+    <Nav>
+      <Nav.Link className="nav-item nav-link text-light" href="/profiles">Members</Nav.Link>
+      <Nav.Link className="nav-item nav-link text-light" href="/posts">Posts</Nav.Link>
+      <Nav.Link className="nav-item nav-link text-light" href="/login">
         <i className="fa fa-user"></i> Dashboard
-      </NavLink>
-      <NavLink
-        onClick={logout}
-        className="nav-item nav-link text-light"
-        href="/"
-      >
+      </Nav.Link>
+      <Nav.Link className="nav-item nav-link text-light" href="/" onClick={logout}>
         <i className="fa fa-sign-out"></i> Logout
-      </NavLink>
-    </NavItem>
+      </Nav.Link>
+    </Nav>
+
+    
   )
 
   const guestLinks = (
-    <NavItem className="navbar-nav">
-      <NavLink className="nav-item nav-link text-light" href="/profiles">
-        Members
-      </NavLink>
-      <NavLink className="nav-item nav-link text-light" href="/register">
-        Register
-      </NavLink>
-      <NavLink className="nav-item nav-link text-light" href="/login">
-        Login
-      </NavLink>
-    </NavItem>
+    <Nav>
+      <Nav.Link className="nav-item nav-link text-light" href="/profiles">Members</Nav.Link>
+      <Nav.Link className="nav-item nav-link text-light" href="/register">Register</Nav.Link>
+      <Nav.Link className="nav-item nav-link text-light" href="/login">Login</Nav.Link>
+    </Nav>
   )
 
   return (
-    <Nav className="navbar navbar-expand-lg bg-dark">
-      <Container>
-        <NavLink className="navbar-brand fw-bold text-light " href="/">
-          🍓 Stay Healthier
-        </NavLink>
-        {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
-      </Container>
-    </Nav>
+    <Navbar bg="dark" variant='dark' expand="lg" className="navbar navbar-expand-lg">
+    <Container>
+      <Navbar.Brand className="navbar-brand fw-bold text-light " href="/">🍓 Stay Healthier</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className='flex-row-reverse'>
+          {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   )
 }
 
