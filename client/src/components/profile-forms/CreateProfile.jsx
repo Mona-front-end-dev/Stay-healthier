@@ -29,15 +29,15 @@ const CreateProfile = ({ createProfile }) => {
   return (
     <>
       <Row>
-        <Col>
-          <h1 className='large text-black my-4'>Create Your Profile</h1>
-          <p className='lead'>
-            <i className='fa fa-user'></i> Let's get some information to make
+        <Col className='my-4'>
+          <h1 className='large text-light my-4'>Create Your Profile</h1>
+          <p className='lead text-light'>
+            <i className='fa fa-user text-light'></i> Let's get some information to make
             your profile stand out
           </p>
-          <small>* = required field</small>
+          <small className='text-light'>* = required field</small>
           <Form onSubmit={(e) => onSubmit(e)}>
-            <Form.Group className='my-3'>
+            <Form.Group className='my-3 text-light'>
               <Form.Label>
                 * Tell us about the type of your life style for example Raw
                 vegan friuterian eating vegtable as well or just fruits
@@ -51,7 +51,7 @@ const CreateProfile = ({ createProfile }) => {
                 onChange={(e) => onChange(e)}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3 text-light'>
               <Form.Label>City & Country</Form.Label>
               <Form.Control
                 value={location}
@@ -60,7 +60,7 @@ const CreateProfile = ({ createProfile }) => {
                 name='location'
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3 text-light'>
               <Form.Label>* Tell us a little about yourself</Form.Label>
               <Form.Control
                 as='textarea'
@@ -74,7 +74,7 @@ const CreateProfile = ({ createProfile }) => {
             
               <>
                 <Form.Group className='social-input my-3'>
-                  <i className='fa fa-facebook fa-2x'></i>
+                  <i className='fa fa-facebook fa-2x text-light'></i>
                   <Form.Control
                     type='text'
                     placeholder='Facebook URL'
@@ -84,7 +84,7 @@ const CreateProfile = ({ createProfile }) => {
                   />
                 </Form.Group>
                 <Form.Group className=' social-input mb-3'>
-                  <i className='fa fa-youtube fa-2x'></i>
+                  <i className='fa fa-youtube fa-2x text-light'></i>
                   <Form.Control
                     type='text'
                     placeholder='YouTube URL'
@@ -94,7 +94,7 @@ const CreateProfile = ({ createProfile }) => {
                   />
                 </Form.Group>
                 <Form.Group className=' social-input mb-3'>
-                  <i className='fa fa-instagram fa-2x'></i>
+                  <i className='fa fa-instagram fa-2x text-light'></i>
                   <Form.Control
                     type='text'
                     placeholder='Instagram URL'
@@ -105,7 +105,7 @@ const CreateProfile = ({ createProfile }) => {
                 </Form.Group>
               </>
             
-            <input type='submit' className='btn btn-dark my-1' />{' '}
+            <input type='submit' className='btn btn-dark my-1 border-light' />{' '}
             <a className='btn btn-light my-1 border' href='/dashboard'>
               Go Back
             </a>

@@ -40,8 +40,8 @@ const Dashboard = ({
         </>
       ) : (
         <>
-          <p>You have not set up a profile yet, please add some info </p>
-          <NavLink to='/create-profile' className='btn btn-dark my-1'>
+          <p className='text-light'>You have not set up a profile yet, please add some info </p>
+          <NavLink to='/create-profile' className='btn btn-dark my-1 border-light'>
             Create profile
           </NavLink>
         </>

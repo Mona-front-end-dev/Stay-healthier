@@ -16,15 +16,15 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           <div className="spinner-border text-secondary"></div>
         ) : (
           <>
-            <h1 className="large text-dark my-4">Members</h1>
-            <p className="load">Brows and connect with members</p>
+            <h1 className="large text-light my-4">Members</h1>
+            <p className="load text-light">Brows and connect with members</p>
             <div className="profiles">
               {profiles.length > 0 ? (
                 profiles.map((profile) => (
                   <ProfileItem key={profile._id} profile={profile} />
                 ))
               ) : (
-                <h4>No profile found.. .</h4>
+                <h4 className='text/light'>No profile found.. .</h4>
               )}
             </div>
           </>
