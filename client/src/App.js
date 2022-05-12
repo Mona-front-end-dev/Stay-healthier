@@ -30,26 +30,28 @@ function App() {
   }, [])
 
   return (
-    <Provider store={store}>
-      <Router>
-        <Navigation />
-        <Container>
-          <Alert />
-          <Routes>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profiles" element={<Profiles />} />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/create-profile" element={<CreateProfile />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
-            <Route path="/add-experience" element={<AddExperience />} />
-            <Route path="/posts" element={<Posts />} />
-            <Route exact path="/" element={<Landing />} />
-          </Routes>
-        </Container>
-      </Router>
-    </Provider>
+    <main className='bg-image'>
+      <Provider store={store}>
+        <Router>
+          <Navigation />
+          <Container>
+            <Alert />
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profiles" element={<Profiles />} />
+              <Route path="/profile/:id" element={<Profile />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/create-profile" element={<CreateProfile />} />
+              <Route path="/edit-profile" element={<EditProfile />} />
+              <Route path="/add-experience" element={<AddExperience />} />
+              <Route path="/posts" element={<Posts />} />
+              <Route exact path="/" element={<Landing />} />
+            </Routes>
+          </Container>
+        </Router>
+      </Provider>
+    </main>
   )
 }
 
