@@ -25,12 +25,12 @@ const AddExperience = ({ addExperience }) => {
 
   return (
     <>
-      <h1 className='large text-dark my-4'>Add An Experience</h1>
-      <p className='lead'>
-        <i className='fa fa-black-tie text-secondary'></i> Add any experience about this life
+      <h1 className='large text-light my-4'>Add An Experience</h1>
+      <p className='lead text-light'>
+        <i className='fa fa-black-tie text-light'></i> Add any experience about this life
         style you have had
       </p>
-      <small className='text-secondary'>* = required field</small>
+      <small className='text-light'>* = required field</small>
       <Form
         className='my-4'
         onSubmit={(e) => {
@@ -38,7 +38,7 @@ const AddExperience = ({ addExperience }) => {
           addExperience(formData, navigate('/dashboard'));
         }}
       >
-        <Form.Group>
+        <Form.Group className='text-light'>
           <Form.Label>Title</Form.Label>
           <Form.Control
             type='text'
@@ -49,7 +49,7 @@ const AddExperience = ({ addExperience }) => {
             required
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='text-light'>
           <Form.Label>From Date</Form.Label>
           <Form.Control
             className='text-secondary'
@@ -60,7 +60,7 @@ const AddExperience = ({ addExperience }) => {
           />
         </Form.Group>
         <Form.Group>
-          <p>
+          <p className='text-light'>
             <input
               type='checkbox'
               name='current'
@@ -74,7 +74,7 @@ const AddExperience = ({ addExperience }) => {
             Current
           </p>
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='text-light'>
           <Form.Label>To Date</Form.Label>
           <Form.Control
             className='text-secondary'
@@ -95,7 +95,7 @@ const AddExperience = ({ addExperience }) => {
             onChange={(e) => onChange(e)}
           />
         </Form.Group>
-            <input type='submit' className='btn btn-dark my-1 mx-2' />
+            <input type='submit' className='btn btn-dark my-1 mx-2 border-light' />
             <NavLink className='btn btn-light my-1 border' to='/dashboard'>
             Go Back
             </NavLink>

@@ -9,7 +9,7 @@ const PostForm = ({ addPost }) => {
 
   return (
     <>
-      <div className="bg-light p">
+      <div className="bg-transparent text-light">
         <h3>Leave your question or feedback 🔈</h3>
       </div>
       <Form
@@ -30,7 +30,7 @@ const PostForm = ({ addPost }) => {
           placeholder="Create a post"
           required
         ></Form.Control>
-        <input type="submit" className="btn btn-dark my-4" value="Submit" />
+        <input type="submit" className="btn btn-dark my-4 border-light" value="Submit" />
       </Form>
     </>
   )

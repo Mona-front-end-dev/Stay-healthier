@@ -23,9 +23,9 @@ const Dashboard = ({
     </div>
   ) : (
     <>
-      <h1 className='large text-dark my-4'>Dashboard</h1>
-      <p>
-        <i className='fa fa-user'></i> Welcome {user && user.name}
+      <h1 className='large text-light my-4'>Dashboard</h1>
+      <p className='text-light'>
+        <i className='fa fa-user text-light'></i> Welcome {user && user.name}
       </p>
       {profile !== null ? (
         <>

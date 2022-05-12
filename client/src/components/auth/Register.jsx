@@ -35,9 +35,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Row>
       <Col>
-        <h1 className='large text-dark my-4'>Sign Up</h1>
-        <p className='lead'>
-          <i className='fa fa-user'></i> Create Your Account
+        <h1 className='large text-light my-4'>Sign Up</h1>
+        <p className='lead text-light'>
+          <i className='fa fa-user text-light'></i> Create Your Account
         </p>
         <Form className='form' onSubmit={(e) => onSubmit(e)}>
           <Form.Group className='mb-3'>
@@ -59,7 +59,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
               required
             />
-            <Form.Text>
+            <Form.Text className='text-light'>
               This site uses Gravatar so if you want a profile image, use a
               Gravatar email
             </Form.Text>
@@ -88,7 +88,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             Register
           </Button>
         </Form>
-        <p className='my-1'>
+        <p className='my-1 text-light'>
           Already have an account? <Button href='/login' className="bg-light text-dark border">Sign In</Button>
         </p>
       </Col>

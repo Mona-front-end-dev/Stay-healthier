@@ -47,14 +47,14 @@ const EditProfile = ({
   return (
     <>
       <Row>
-        <Col>
-          <h1 className='large text-black'>Edit Your Profile</h1>
-          <p className='lead'>
-            <i className='fa fa-user'></i> Edit your prifile if you need
+        <Col className="my-4">
+          <h1 className='large text-light'>Edit Your Profile</h1>
+          <p className='lead text-light'>
+            <i className='fa fa-user text-light'></i> Edit your profile if you need
           </p>
-          <small>* = required field</small>
+          <small className='text-light'>* = required field</small>
           <Form onSubmit={(e) => onSubmit(e)}>
-            <Form.Group className='my-3'>
+            <Form.Group className='my-3 text-light'>
               <Form.Label>
                 * Tell us about the type of your life style for example Raw
                 vegan friuterian eating vegtable as well or just fruits
@@ -68,7 +68,7 @@ const EditProfile = ({
                 onChange={(e) => onChange(e)}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3 text-light'>
               <Form.Label>City & Country</Form.Label>
               <Form.Control
                 value={location}
@@ -77,7 +77,7 @@ const EditProfile = ({
                 name='location'
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3 text-light'>
               <Form.Label>* Tell us a little about yourself</Form.Label>
               <Form.Control
                 as='textarea'
@@ -90,7 +90,7 @@ const EditProfile = ({
             </Form.Group>
             <>
               <Form.Group className='social-input my-3'>
-                <i className='fa fa-facebook fa-2x'></i>
+                <i className='fa fa-facebook fa-2x text-light'></i>
                 <Form.Control
                   type='text'
                   placeholder='Facebook URL'
@@ -100,7 +100,7 @@ const EditProfile = ({
                 />
               </Form.Group>
               <Form.Group className=' social-input mb-3'>
-                <i className='fa fa-youtube fa-2x'></i>
+                <i className='fa fa-youtube fa-2x text-light'></i>
                 <Form.Control
                   type='text'
                   placeholder='YouTube URL'
@@ -110,7 +110,7 @@ const EditProfile = ({
                 />
               </Form.Group>
               <Form.Group className=' social-input mb-3'>
-                <i className='fa fa-instagram fa-2x'></i>
+                <i className='fa fa-instagram fa-2x text-light'></i>
                 <Form.Control
                   type='text'
                   placeholder='Instagram URL'
@@ -120,7 +120,7 @@ const EditProfile = ({
                 />
               </Form.Group>
             </>
-            <input type='submit' className='btn btn-dark my-1' />{' '}
+            <input type='submit' className='btn btn-dark my-1 border-light' />{' '}
             <a className='btn btn-light my-1 border' href='/dashboard'>
               Go Back
             </a>
