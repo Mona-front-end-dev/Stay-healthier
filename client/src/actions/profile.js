@@ -14,7 +14,7 @@ import { Navigate } from 'react-router-dom'
 export const getCurrentProfile = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile/me',
+      'http://localhost:5000/api/profile/me',
     )
 
     dispatch({
@@ -34,7 +34,7 @@ export const getProfiles = () => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE })
   try {
     const res = await axios.get(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile',
+      'http://localhost:5000/api/profile',
     )
 
     dispatch({
@@ -54,7 +54,7 @@ export const getProfileById = (userId) => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE })
   try {
     const res = await axios.get(
-      `http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile/user/${userId}`,
+      `http://localhost:5000/api/profile/user/${userId}`,
     )
 
     dispatch({
@@ -79,7 +79,7 @@ export const createProfile = (formData, edit = false) => async (dispatch) => {
     }
 
     const res = await axios.post(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile',
+      'http://localhost:5000/api/profile',
       formData,
       config,
     )
@@ -117,7 +117,7 @@ export const addExperience = (formData) => async (dispatch) => {
     }
 
     const res = await axios.put(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile/experience',
+      'http://localhost:5000/api/profile/experience',
       formData,
       config,
     )
@@ -147,7 +147,7 @@ export const addExperience = (formData) => async (dispatch) => {
 export const deleteExperience = (id) => async (dispatch) => {
   try {
     const res = await axios.delete(
-      `http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile/experience/${id}`,
+      `http://localhost:5000/api/profile/experience/${id}`,
     )
 
     dispatch({
@@ -170,7 +170,7 @@ export const deleteAccount = () => async (dispatch) => {
   if (window.confirm('Are you sure? This CAN NOT BE UNDONE!'))
     try {
       const res = await axios.delete(
-        `http://butikrea.wwwnl1-ss15.a2hosted.com/api/profile`,
+        `http://localhost:5000/api/profile`,
       )
 
       dispatch({ type: CLEAR_PROFILE })

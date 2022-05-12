@@ -20,7 +20,7 @@ export const loadUser = () => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/auth',
+      'http://localhost:5000/api/auth',
     )
 
     dispatch({
@@ -48,7 +48,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
   try {
     //sending the request to get the response
     const res = await axios.post(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/users',
+      'http://localhost:5000/api/users',
       { name, email, password },
       config,
     )
@@ -85,7 +85,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     //sending the request to get the response
     const res = await axios.post(
-      'http://butikrea.wwwnl1-ss15.a2hosted.com/api/auth',
+      'http://localhost:5000/api/auth',
       { email, password },
       config,
     )
